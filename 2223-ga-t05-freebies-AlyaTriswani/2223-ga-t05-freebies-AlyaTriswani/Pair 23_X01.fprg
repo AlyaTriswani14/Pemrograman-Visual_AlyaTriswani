@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-04 03:13:24 PM"/>
+        <attribute name="created" value="QVNVUztMQVBUT1AtTTVQNEI0QkQ7MjAyMy0xMS0wMzswOTowMjo0MyBQTTsyNjEz"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtTTVQNEI0QkQ7MjAyMy0xMS0wNDswMzoxMzoyNCBQTTs1OzI3MjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Hargabuku, totalharga, hargapalingkecil, totaltransaksi" type="Real" array="False" size=""/>
+            <input variable="Hargabuku"/>
+            <assign variable="totalharga" expression="Hargabuku"/>
+            <assign variable="hargapalingkecil" expression="Hargabuku"/>
+            <while expression="Hargabuku !=0">
+                <if expression="hargapalingkecil&lt;Hargabuku">
+                    <then>
+                        <assign variable="hargapalingkecil" expression="hargapalingkecil"/>
+                    </then>
+                    <else>
+                        <assign variable="hargapalingkecil" expression="Hargabuku"/>
+                    </else>
+                </if>
+                <input variable="Hargabuku"/>
+                <assign variable="totalharga" expression="totalharga+Hargabuku"/>
+            </while>
+            <if expression="totalharga&gt;=100">
+                <then>
+                    <assign variable="totaltransaksi" expression="totalharga-hargapalingkecil"/>
+                </then>
+                <else>
+                    <assign variable="totaltransaksi" expression="totalharga"/>
+                </else>
+            </if>
+            <output expression="Tofixed(totaltransaksi,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
