@@ -1,0 +1,2 @@
+Sudah menyelesaikan persoalan.
+Baru saja memperbaiki kesalahan karena tidak dapat nilai maksimum. 
